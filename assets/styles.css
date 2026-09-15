@@ -641,3 +641,56 @@ legend ~ * { clear: left; }
 }
 .social:hover { border-color: var(--ink-3); color: var(--ink) !important; }
 @media print { .social { display: none; } }
+
+/* ---------- motto ---------- */
+
+.motto-band {
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem);
+}
+.motto {
+  font-family: var(--serif);
+  font-size: clamp(1.12rem, 1rem + .75vw, 1.55rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+  text-align: center;
+  max-width: 34ch;
+  margin-inline: auto;
+  position: relative;
+  text-wrap: balance;
+}
+.motto::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--red);
+  margin: 0 auto 1rem;
+}
+.motto--left {
+  text-align: left;
+  margin-inline: 0;
+  margin-top: 1.6rem;
+  max-width: 30ch;
+  font-size: clamp(1.08rem, 1rem + .5vw, 1.3rem);
+}
+.motto--left::before { margin-left: 0; margin-right: 0; }
+
+.foot-motto {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: .93rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 32ch;
+  margin: 0 0 1rem;
+}
+
+@media print {
+  .motto-band, .foot-motto { display: none; }
+  .motto--left { display: none; }
+}
